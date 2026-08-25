@@ -30,8 +30,16 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
-.env*
+# env files (DO NOT COMMIT SECRETS)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env*.local
+
+# Se você criar um arquivo de exemplo com variáveis falsas, ele será commitado
+!.env.example
 
 # vercel
 .vercel
@@ -39,3 +47,29 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# prisma generated
+/app/generated/prisma
+/prisma/**/*.db
+/prisma/**/*.db-journal
+
+# IDEs and Editors (configs locais de ferramentas)
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# AI Agents & IDE Extensions
+.agents/
+.agents
+.windsurf/
+.windsurf
+.claude/
+.claude
+skills-lock.json
+AGENTS.md
+claude.md
+scratch*.js
+scratch*.ts

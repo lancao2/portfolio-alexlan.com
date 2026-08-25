@@ -1,0 +1,41 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Message {
+  id        String   @id @default(cuid())
+  content   String   @db.Text
+  userName  String
+  userEmail String
+  userImage String?
+  createdAt DateTime @default(now())
+}
+
+model Bill {
+  id          String   @id
+  amount      Float
+  peopleCount Int
+  userId      String
+  scanCount   Int      @default(0)
+  paidCount   Int      @default(0)
+  createdAt   DateTime @default(now())
+  User        User     @relation(fields: [userId], references: [id])
+
+  @@index([userId], map: "Bill_userId_fkey")
+}
+
+model User {
+  id              String   @id
+  name            String
+  pixKeyHash      String   @unique
+  pixKeyEncrypted String
+  city            String
+  pin             String
+  createdAt       DateTime @default(now())
+  Bill            Bill[]
+}
