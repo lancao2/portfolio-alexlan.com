@@ -256,15 +256,28 @@ export function MenuBar() {
               Escolha um horário na minha agenda do Google para um bate-papo rápido!
             </p>
 
-            <div className="w-full h-[400px] rounded-lg overflow-hidden border border-black/10 dark:border-white/10 bg-white">
-              <iframe 
-                src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2m1qNHsqpa3jikAosdadsGx8CbXaXXTUkpoFuyKfEecFBc81mVz4AP1KA4ihM2Zlts5uCSbaUC?gv=true" 
-                style={{ border: 0 }} 
-                width="100%" 
-                height="100%" 
-                frameBorder="0"
-              />
-            </div>
+            {session ? (
+              <div className="w-full h-[400px] rounded-lg overflow-hidden border border-black/10 dark:border-white/10 bg-white">
+                <iframe 
+                  src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2m1qNHsqpa3jikAosdadsGx8CbXaXXTUkpoFuyKfEecFBc81mVz4AP1KA4ihM2Zlts5uCSbaUC?gv=true" 
+                  style={{ border: 0 }} 
+                  width="100%" 
+                  height="100%" 
+                  frameBorder="0"
+                />
+              </div>
+            ) : (
+              <div className="w-full h-[160px] rounded-lg border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 flex flex-col items-center justify-center p-4 text-center">
+                <span className="text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1">Identificação Necessária</span>
+                <span className="text-xs text-slate-500 mb-4">Para evitar spans, faça login com o Google para acessar minha agenda.</span>
+                <button 
+                  onClick={() => signIn("google")}
+                  className="bg-blue-500 hover:bg-blue-600 text-white text-xs font-bold px-5 py-2.5 rounded-full shadow-sm transition-colors"
+                >
+                  Fazer Login Seguro
+                </button>
+              </div>
+            )}
           </div>
         )}
       </div>

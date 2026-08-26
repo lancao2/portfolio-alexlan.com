@@ -63,7 +63,7 @@ export function AboutSite() {
         
         {/* Footer info */}
         <div className="  mt-5 text-[10px] text-slate-400 font-medium">
-          Sistema Operacional Portfólio v1.0.0 © {new Date().getFullYear()} Alex Lançao
+          Sistema Operacional Portfólio v1.0.1 © {new Date().getFullYear()} Alex Lançao
         </div>
       </div>
     </Window>
