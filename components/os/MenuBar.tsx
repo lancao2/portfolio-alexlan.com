@@ -267,9 +267,9 @@ export function MenuBar() {
                 />
               </div>
             ) : (
-              <div className="w-full h-[160px] rounded-lg border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 flex flex-col items-center justify-center p-4 text-center">
-                <span className="text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1">Identificação Necessária</span>
-                <span className="text-xs text-slate-500 mb-4">Para evitar spans, faça login com o Google para acessar minha agenda.</span>
+              <div className="w-full h-[160px] rounded-lg border border-black/10 dark:border-white/20 bg-black/5 dark:bg-white/10 flex flex-col items-center justify-center p-4 text-center">
+                <span className="text-sm font-semibold text-slate-800 dark:text-white mb-1">Identificação Necessária</span>
+                <span className="text-xs text-slate-600 dark:text-white/70 mb-4">Para evitar spans, faça login com o Google para acessar minha agenda.</span>
                 <button 
                   onClick={() => signIn("google")}
                   className="bg-blue-500 hover:bg-blue-600 text-white text-xs font-bold px-5 py-2.5 rounded-full shadow-sm transition-colors"
