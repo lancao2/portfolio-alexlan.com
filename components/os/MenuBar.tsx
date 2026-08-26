@@ -110,9 +110,9 @@ export function MenuBar() {
   };
 
   return (
-    <div className="fixed top-0 left-0 right-0 h-7 bg-black/20 backdrop-blur-md text-white/90 text-xs font-medium px-3 flex items-center justify-between z-50 border-b border-white/10">
+    <div className="fixed top-0 left-0 right-0 h-7 bg-black/20 backdrop-blur-md text-white/90 text-xs font-medium px-3 flex items-center justify-between z-50 border-b border-white/10" ref={menuRef}>
       {/* Esquerda */}
-      <div className="flex items-center gap-4" ref={menuRef}>
+      <div className="flex items-center gap-4">
         <div className="relative">
           <div 
             className="w-4 h-4 relative cursor-pointer hover:opacity-80 transition-opacity"
