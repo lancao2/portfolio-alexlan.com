@@ -31,10 +31,10 @@ interface OSContextProps {
   clearNotification: (id: string) => void;
 
   // Spotify
-  spotifyController: unknown;
-  setSpotifyController: (controller: unknown) => void;
-  spotifyPlayback: unknown;
-  setSpotifyPlayback: (state: unknown) => void;
+  spotifyController: any;
+  setSpotifyController: (controller: any) => void;
+  spotifyPlayback: any;
+  setSpotifyPlayback: (state: any) => void;
 
   // Launchpad
   isLaunchpadOpen: boolean;
@@ -128,8 +128,8 @@ export function OSProvider({ children }: { children: ReactNode }) {
     setSettings(prev => ({ ...prev, ...newSettings }));
   };
 
-  const [spotifyController, setSpotifyController] = useState<unknown>(null);
-  const [spotifyPlayback, setSpotifyPlayback] = useState<unknown>(null);
+  const [spotifyController, setSpotifyController] = useState<any>(null);
+  const [spotifyPlayback, setSpotifyPlayback] = useState<any>(null);
 
   const [isLaunchpadOpen, setLaunchpadOpen] = useState(false);
 
