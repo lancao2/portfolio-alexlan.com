@@ -63,7 +63,7 @@ export function Dock() {
         <div className="w-full h-full relative transition-transform drop-shadow-lg flex items-center justify-center">
           <div className={`relative flex items-center justify-center w-full h-full
             ${item.iconSrc.includes("github.com") ? "scale-[0.85] rounded-full overflow-hidden border-2 border-white/20" : ""}
-            ${item.id === "natuhair" ? "scale-[0.85] bg-white rounded-[1.2rem] shadow-sm overflow-hidden" : ""}
+            ${item.id === "natuhair" || item.id === "holystreaks" ? "scale-[0.85] bg-white rounded-[1.2rem] shadow-sm overflow-hidden" : ""}
           `}>
             <Image 
               src={item.iconSrc} 
@@ -72,7 +72,7 @@ export function Dock() {
               sizes={`${hoverSize}px`} 
               className={`object-contain 
                 ${item.iconSrc.includes("github.com") ? "object-cover scale-100" : ""}
-                ${item.id === "natuhair" || item.id === "resume" ? "scale-[0.8]" : "scale-[1.35]"}
+                ${item.id === "natuhair" || item.id === "resume" ? "scale-[0.8]" : item.id === "holystreaks" ? "scale-[1.0]" : "scale-[1.35]"}
               `} 
             />
           </div>

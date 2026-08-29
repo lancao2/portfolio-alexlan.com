@@ -11,6 +11,7 @@ import { Spotify } from "./apps/Spotify";
 import { Terminal } from "./apps/Terminal";
 import { Natuhair } from "./apps/Natuhair";
 import { Safari } from "./apps/Safari";
+import { HolyStreaks } from "./apps/HolyStreaks";
 import { Resume } from "./apps/Resume";
 import { Launchpad } from "./Launchpad";
 
@@ -70,6 +71,7 @@ export function DesktopEnvironment() {
       <Terminal />
       <Natuhair />
       <Safari />
+      <HolyStreaks />
       <Resume />
       
       <Launchpad />

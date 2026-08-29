@@ -31,10 +31,10 @@ interface OSContextProps {
   clearNotification: (id: string) => void;
 
   // Spotify
-  spotifyController: any;
-  setSpotifyController: (controller: any) => void;
-  spotifyPlayback: any;
-  setSpotifyPlayback: (state: any) => void;
+  spotifyController: unknown;
+  setSpotifyController: (controller: unknown) => void;
+  spotifyPlayback: unknown;
+  setSpotifyPlayback: (state: unknown) => void;
 
   // Launchpad
   isLaunchpadOpen: boolean;
@@ -54,6 +54,7 @@ export const appRegistry: Record<string, AppData> = {
   resume: { id: "resume", title: "Currículo.pdf", menus: ["Pré-visualização", "Arquivo", "Editar", "Visualizar", "Ir", "Ferramentas", "Janela", "Ajuda"], iconSrc: "https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg" },
   "about-site": { id: "about-site", title: "Sobre este Site", menus: ["Arquivo", "Janela", "Ajuda"], iconSrc: "https://github.com/lancao2.png" },
   natuhair: { id: "natuhair", title: "Natuhair Connect", menus: ["App", "Editar", "Visualizar", "Ajuda"], iconSrc: "/icons/natuhair.png" },
+  holystreaks: { id: "holystreaks", title: "HolyStreaks", menus: ["Arquivo", "Editar", "Visualizar", "Janela", "Ajuda"], iconSrc: "/icons/holyStreakes.png" },
   preferences: { id: "preferences", title: "Ajustes do Sistema", menus: ["Ajustes", "Arquivo", "Editar", "Visualizar", "Janela", "Ajuda"], iconSrc: "/icons/Sattings.png" },
   portfolio: { id: "portfolio", title: "Portfólio", menus: ["Arquivo", "Editar", "Visualizar", "Janela", "Ajuda"], iconSrc: "/icon-dark.png" }, // Desktop base
 };
@@ -127,8 +128,8 @@ export function OSProvider({ children }: { children: ReactNode }) {
     setSettings(prev => ({ ...prev, ...newSettings }));
   };
 
-  const [spotifyController, setSpotifyController] = useState<any>(null);
-  const [spotifyPlayback, setSpotifyPlayback] = useState<any>(null);
+  const [spotifyController, setSpotifyController] = useState<unknown>(null);
+  const [spotifyPlayback, setSpotifyPlayback] = useState<unknown>(null);
 
   const [isLaunchpadOpen, setLaunchpadOpen] = useState(false);
 
